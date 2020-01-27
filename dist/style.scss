@@ -1,0 +1,9 @@
+// compileCompressed: ../src/$1.min.css
+@import "variables";
+@import "mixins";
+@import "base";
+
+
+body {
+margin: 0;
+}
