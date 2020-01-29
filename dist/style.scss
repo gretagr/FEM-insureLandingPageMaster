@@ -6,4 +6,120 @@
 
 body {
 margin: 0;
+font-size: $body-copy;
+}
+
+a {
+  text-decoration: none;
+}
+
+span, p, button, a {
+  font-family: $body-family;
+}
+
+h1, h2, h3 {
+  font-family: $heading-family;
+}
+
+h1, h2 {
+  font-size: 5.25em;
+  line-height: 4.6;
+  letter-spacing: -2px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10vw 20px 12vw;
+  background: hsl(0, 0%, 100%);
+  z-index: 2;
+
+  .logo {
+    width: 8vw;
+  }
+}
+
+.header-nav {
+  width: 37%;
+  display: flex;
+  justify-content: space-between;
+
+  &__call-to-action {
+    @include button($dark-violet);
+  }
+
+  &__link {
+    padding: 15px 0;
+    color: $dark-grayish-violet;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.first-screen {
+  position: relative;
+  background: $dark-violet;
+  height: 70vh;
+
+  &:before {
+    position: absolute;
+    top: -5vh;
+    right: 0;
+    content: url('../images/bg-pattern-intro-right-desktop.svg');
+    z-index: 1;
+  }
+  
+  &:after {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    content: url('../images/bg-pattern-intro-left-desktop.svg');
+    z-index: 1;
+  }
+
+  .intro {
+    position: relative;
+    top: 18vh;
+    width: 39%;
+    margin-left: 12vw;
+
+    &:before {
+      position: relative;
+      top: -8vh;
+      content: "";
+      display: block;
+      width: 10vw;
+      height: 1px;
+      background: $light-gray;
+    }
+
+    &__title {
+      top: 15vh;
+      color: hsl(0, 0%, 100%);
+      line-height: 0.9em;
+    }
+
+    &__desc {
+      color: $light-gray;
+      line-height: 2em;
+      padding: 15px 0;
+      font-size: 1.2em;
+
+    }
+
+    &__call-to-action {
+      @include button($light-gray);
+    }
+  }
+
+  &__hero {
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    width: 35%;
+  }
 }
